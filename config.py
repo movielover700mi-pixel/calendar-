@@ -1,0 +1,6 @@
+import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+NOTIFICATION_HOUR = 8
+NOTIFICATION_MINUTE = 0
+TIMEZONE = "Asia/Dhaka"

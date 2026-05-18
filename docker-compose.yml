@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  anime-bot:
+    build: .
+    container_name: anime-scheduler-bot
+    restart: always
+    ports:
+      - "10000:10000"
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - TZ=Asia/Dhaka
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:10000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
